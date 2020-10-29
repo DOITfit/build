@@ -12,6 +12,7 @@ scripts/config --file ${OUT_DIR}/.config \
 	-d LTO \
 	-d LTO_CLANG \
 	-e LLVM_POLLY \
+    -e LD_LLD \
 
 cd ${OUT_DIR}
 make O=${OUT_DIR} \
@@ -25,6 +26,7 @@ make ARCH=arm64 \
 	O=${OUT_DIR} \
 	CC="ccache clang" \
 	LLVM_IAS=1 \
+	LD="ld.lld" \
 	AR="llvm-ar" \
 	NM="llvm-nm" \
 	OBJCOPY="llvm-objcopy" \
